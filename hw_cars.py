@@ -16,7 +16,7 @@ def main(): create_inventory()
 def create_inventory():
     ''' This function creates a table in
         the cars database called inventory '''
-    query = """CREATE TABLE IF NOT EXISTS cars
+    query = """CREATE TABLE IF NOT EXISTS inventory
             (Make TEXT, Model TEXT, Quantity INT)"""
     cursor.execute(query)
 
