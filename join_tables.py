@@ -8,7 +8,7 @@ with sqlite3.connect("new.db") as connection:
     cursor = connection.cursor()
 
     # retrieve data
-    cursor.execute(""" SELECT population.city, population.population,
+    cursor.execute(""" SELECT DISTINCT population.city, population.population,
                     regions.region FROM population, regions WHERE
                     population.city = regions.city ORDER by
                     population.city ASC""")
