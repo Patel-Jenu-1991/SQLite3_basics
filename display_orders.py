@@ -10,8 +10,9 @@ with sqlite3.connect("cars.db") as connection:
     cursor = connection.cursor()
 
     # retrieve data
-    cursor.execute(""" SELECT inventory.Make, inventory.Model, inventory.Quantity,
-                orders.order_date FROM inventory INNER JOIN orders
+    cursor.execute(""" SELECT inventory.Make, inventory.Model,
+                inventory.Quantity, orders.order_date
+                FROM inventory INNER JOIN orders
                 ON inventory.Model = orders.model """)
 
     rows = cursor.fetchall()
